@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+DentAssist
+
+{% endblock %}
+
+{% block body %}
+
+
+<h1>DentAssist. </h1> 
+<h4>A dental care screening system.</h3> 
+<br>
+
+<form autocomplete="off" action="{{ url_for('useraccess') }}" method="post">
+    <input type="text" name="username" placeholder="Username"> <br>
+    <input type="password" name="password" placeholder="Password"> <br><br>
+    <button><span>Get Started</span></button>
+</form>
+
+
+<br>
+<p>
+Not yet a user? Click <a href="{{ url_for('registration') }}">here</a> to register.
+</p>
+
+{% endblock %}
