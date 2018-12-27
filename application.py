@@ -56,6 +56,7 @@ def menu():
 		return render_template("error.html", message="Sorry - we couldn't find you in our system. Please return to try again or register!")
 	if users_match.password == pass_attempt:
 		session['name'] = users_match.first_name
+		session['id'] = users_match.id
 		return render_template("menu.html", name=session.get('name'))
 	else:
 		return render_template("error.html", message="Sorry - we couldn't find you in our system. Please return to try again or register!")
@@ -63,7 +64,24 @@ def menu():
 
 @app.route("/view_results")
 def view_results():
-    return render_template("view_results.html")
+	user_id = session.get('id')
+	student_list = db.execute("SELECT * FROM students WHERE user_id = :user_id",
+		{"user_id":user_id}).fetchall()
+	for student in student_list:
+		print("Search result: %s" % student.student_first_name)
+	if student_list is None:
+		return render_template("error.html", message = "Sorry - no students found.")
+	else:
+		return render_template("view_results.html",student_list=student_list)
+
+@app.route("/assessment/<string:student_id>")
+def assessment(student_id):
+	student_search = db.execute("SELECT * FROM students WHERE id =:student_id", {"student_id": student_id}).fetchone()
+	if student_search is None: 
+		return render_template("error.html", message = "Sorry - this student does not exist.")
+	return render_template("assessment_details.html", student = student_search, plaque = student_search.plaque, cavities = student_search.cavities)
+
+
 
 @app.route("/start_assessment")
 def start_assessment():

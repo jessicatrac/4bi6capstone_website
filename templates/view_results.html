@@ -7,10 +7,22 @@ DentAssist - View an Assessment
 {% block body %}
 
 
-<h1>Hello! Please select an option.</h1> 
+<h1>Select a student below.</h1> 
+<br>
+<br>
+<br>
 
+
+
+{% for student in student_list %}
+	<a href="{{ url_for('assessment', student_id=student.id) }}">
+		{{ student.student_first_name }} {{ student.student_last_name }}
+	</a>
 <br>
-<br>
+
+{% endfor %}
+
+
 
 
 
