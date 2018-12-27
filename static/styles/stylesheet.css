@@ -8,9 +8,18 @@ a:hover {
 	background-color: black;
 }
 
+.italics_emphasis {
+  font-style: italic;
+}
+
 
 h1, h4, p {
 	color: black;
+  text-align: center;
+}
+
+.container {
+    text-align:center;
 }
 
 input[type=text], input[type=password] {

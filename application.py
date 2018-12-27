@@ -46,8 +46,8 @@ def mainpage_newregister():
 		return render_template("error.html", message="Sorry - cannot register user.")
 	return render_template("mainpage.html")
 
-@app.route("/useraccess", methods=['POST'])
-def useraccess():
+@app.route("/menu", methods=['POST'])
+def menu():
 	email_attempt = request.form.get("email")
 	pass_attempt = request.form.get("pass")
 	try:
@@ -61,3 +61,10 @@ def useraccess():
 		return render_template("error.html", message="Sorry - we couldn't find you in our system. Please return to try again or register!")
 	return render_template("mainpage.html")
 
+@app.route("/view_results")
+def view_results():
+    return render_template("view_results.html")
+
+@app.route("/start_assessment")
+def start_assessment():
+    return render_template("start_assessment.html")    

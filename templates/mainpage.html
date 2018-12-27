@@ -10,19 +10,18 @@ DentAssist
 
 
 <h1>DentAssist. </h1> 
-<h4>A dental care screening system.</h3> 
+<h4>A dental care screening system.</h3>
+<span class="italics_emphasis"><h6>Designed to assist healthcare professionals <br>in identifying difficult-to-find oral health issues. </h6></span>
 <br>
 
-<form autocomplete="off" action="{{ url_for('useraccess') }}" method="post">
+<form autocomplete="off" action="{{ url_for('menu') }}" method="post">
     <input type="text" name="email" placeholder="Email"> <br>
     <input type="password" name="pass" placeholder="Password"> <br><br>
-    <button><span>Get Started</span></button>
+    <button><span>Log In</span></button>
 </form>
 
 
 <br>
-<p>
-Not yet a user? Click <a href="{{ url_for('registration') }}">here</a> to register.
-</p>
+<span class="italics_emphasis"><p>Not yet a user? Click <a href="{{ url_for('registration') }}">here</a> to register.</p></span>
 
 {% endblock %}
