@@ -1,11 +1,11 @@
 a {
-    color: black;
+    color: #31ABE8;
 }
 
 a:hover {
 	color: white;
 	text-decoration: none;
-	background-color: black;
+	background-color: #31ABE8;
 }
 
 .italics_emphasis {
@@ -13,8 +13,8 @@ a:hover {
 }
 
 
-h1, h4, p {
-	color: black;
+h1, h3, h4, h6, p {
+	color: #31ABE8;
   text-align: center;
 }
 
@@ -24,8 +24,9 @@ h1, h4, p {
 
 input[type=text], input[type=password] {
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #31ABE8;
     outline: none;
+    color: #31ABE8;
 }
 
 
@@ -37,7 +38,7 @@ input[type=text], input[type=password] {
 button {
   display: inline-block;
   border-radius: 4px;
-  background-color: black;
+  background-color: #31ABE8;
   border: none;
   color: #FFFFFF;
   text-align: center;
