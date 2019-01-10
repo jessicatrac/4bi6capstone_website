@@ -25,10 +25,10 @@ CREATE TABLE students ( /* Keeps track of detection results for students. */
 	school VARCHAR NOT NULL,
 	guardian_email VARCHAR NOT NULL,
 	user_id INTEGER REFERENCES users, 
-	plaque DECIMAL,
+	plaque BOOLEAN,
 	cavities INTEGER 
 );
 
 INSERT INTO students (student_first_name, student_last_name, school, guardian_email, user_id) VALUES ('Christine', 'Trac', 'Castlemore', 'jessicamtrac@gmail.com', 1);
-INSERT INTO students (student_first_name, student_last_name, school, guardian_email, user_id, plaque, cavities) VALUES ('Sarina', 'Trac', 'Castlemore', 'jessicamtrac@gmail.com', 1, 0.50, 2);
-INSERT INTO students (student_first_name, student_last_name, school, guardian_email, user_id, plaque, cavities) VALUES ('Jessica', 'Trac', 'Castlemore', 'jessicamtrac@gmail.com', 2, 0.70, 1);
+INSERT INTO students (student_first_name, student_last_name, school, guardian_email, user_id, plaque, cavities) VALUES ('Sarina', 'Trac', 'Castlemore', 'jessicamtrac@gmail.com', 1, 'false', 2);
+INSERT INTO students (student_first_name, student_last_name, school, guardian_email, user_id, plaque, cavities) VALUES ('Jessica', 'Trac', 'Castlemore', 'jessicamtrac@gmail.com', 1, 'true', 1);
