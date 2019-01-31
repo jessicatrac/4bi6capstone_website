@@ -19,22 +19,31 @@
 
     <body>
 
+      <nav class="navbar navbar-default fixed-top">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+        <li> <span class="emphasis-invert">DENTASSIST </span></li>
+      <!--                      <li> | </li> -->
+          <li><a class="main-nav-item" href="{{ url_for('about') }}"> ABOUT </a></li>
+          <li><a class="main-nav-item" href="#"> MEET THE TEAM </a></li>
+         </ul>
+      </div>
+      </nav>
+
         <!-- Centering the body of the page -->
         <div class="container">
             <div class="row justify-content-md-center">
               <br>
               <br>
               <br>
+              <br>
+              <br>
+              <br>
+
             </div>
 
             <div class="row justify-content-md-center">
-              <img src="{{ url_for('static', filename='DentAssist_Mag_Logo_White_Tran-01.png') }}" height="100" width="100">
-            </div>
-
-            <div class="row justify-content-md-center">
-              <br>
-              <br>
-              <br>
+              <img src="{{ url_for('static', filename='DentAssist_Mag_Logo_White_Plain.png') }}" height="150" width="150">
             </div>
 
             <div class="row justify-content-md-center">

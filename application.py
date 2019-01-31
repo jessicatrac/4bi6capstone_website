@@ -27,6 +27,10 @@ Session(app)
 def mainpage():
     return render_template("mainpage.html")
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
 @app.route("/registration")
 def registration():
     return render_template("registration.html")
@@ -77,7 +81,7 @@ def view_results():
 @app.route("/assessment/<string:student_id>")
 def assessment(student_id):
 	student_search = db.execute("SELECT * FROM students WHERE id =:student_id", {"student_id": student_id}).fetchone()
-	if student_search is None: 
+	if student_search is None:
 		return render_template("error.html", message = "Sorry - this student does not exist.")
 	return render_template("assessment_details.html", student = student_search, plaque = student_search.plaque, cavities = student_search.cavities)
 
@@ -85,4 +89,4 @@ def assessment(student_id):
 
 @app.route("/start_assessment")
 def start_assessment():
-    return render_template("start_assessment.html")    
+    return render_template("start_assessment.html")
