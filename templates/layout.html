@@ -3,7 +3,7 @@
 <html>
 
     <head>
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- The title of the html page is placed within the title block -->
@@ -21,24 +21,36 @@
 
         <!-- Centering the body of the page -->
         <div class="container">
-            <div class="row justify-content-md-center"">
-                <div class = "col-10">
+            <div class="row justify-content-md-center">
+              <br>
+              <br>
+              <br>
+            </div>
 
-                    <!-- Some spaces under the top of the page -->
-                    <br>
-                    <br>
-                    <br>
+            <div class="row justify-content-md-center">
+              <img src="{{ url_for('static', filename='DentAssist_Mag_Logo_White_Tran-01.png') }}" height="100" width="100">
+            </div>
 
-                    <img src="{{ url_for('static', filename='DentAssist_Mag_Logo_White_Tran-01.png') }}" height="100" width="100">
+            <div class="row justify-content-md-center">
+              <br>
+              <br>
+              <br>
+            </div>
 
-                    <br>
-                    <br> 
+            <div class="row justify-content-md-center">
                     <!-- In the html page that implements this layout, its main information is placed within this body block -->
                     {% block body %}
                     {% endblock %}
-
-                </div>
             </div>
+
+            <div class="row justify-content-md-center">
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+            </div>
+
         </div>
 
     </body>

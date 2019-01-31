@@ -6,21 +6,21 @@ DentAssist - Registration
 
 {% block body %}
 
+<div class="col-12">
+	<h3>Please enter the <br>following information.</h3>
 
-<h3>Please enter the <br>following information.</h3>
+	<br>
 
-<br>
+	<form autocomplete="off" action="{{ url_for('mainpage_newregister') }}" method="post">
+		<input type="text" name="firstname" placeholder="First Name"> <br>
+	    <input type="text" name="lastname" placeholder="Last Name">  <br><br>
+	    <input type="text" name="email" placeholder="Email Address">  <br>
+	    <input type="Password" name="pass" placeholder="Password">  <br><br>
+	    <button><span>Join DentAssist!</span></button>
+	</form>
 
-<form autocomplete="off" action="{{ url_for('mainpage_newregister') }}" method="post">
-	<input type="text" name="firstname" placeholder="First Name"> <br>
-    <input type="text" name="lastname" placeholder="Last Name">  <br><br>
-    <input type="text" name="email" placeholder="Email Address">  <br>
-    <input type="Password" name="pass" placeholder="Password">  <br><br>
-    <button><span>Join DentAssist!</span></button>
-</form>
-
-<br>
-<br>
-
+	<br>
+	<br>
+</div>
 
 {% endblock %}

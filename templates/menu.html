@@ -6,14 +6,14 @@ DentAssist - View or Start an Assessment
 
 {% block body %}
 
+<div class="col-12">
+  <h1>Hello {{ name }}!<br>
+  Please select an option.</h1>
 
-<h1>Hello {{ name }}!<br>
-Please select an option.</h1> 
+  <br>
+  <br>
 
-<br>
-<br>
-
-<a href="{{ url_for('view_results') }}">View an Assessment.</a> <br>
-<a href="{{ url_for('start_assessment') }}">Start an Assessment.</a> <br>
-
+  <a href="{{ url_for('view_results') }}">View an Assessment.</a> <br>
+  <a href="{{ url_for('start_assessment') }}">Start an Assessment.</a> <br>
+</div>
 {% endblock %}

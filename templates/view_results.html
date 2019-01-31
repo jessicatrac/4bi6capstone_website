@@ -6,20 +6,18 @@ DentAssist - View an Assessment
 
 {% block body %}
 
+<div class="col-12">
+	<h1>Select a student below.</h1>
+	<br>
 
-<h1>Select a student below.</h1> 
-<br>
-
-
-
-{% for student in student_list %}
-	<a href="{{ url_for('assessment', student_id=student.id) }}">
-		{{ student.student_first_name }} {{ student.student_last_name }}
-	</a>
-<br>
-
+	{% for student in student_list %}
+		<a href="{{ url_for('assessment', student_id=student.id) }}">
+			{{ student.student_first_name }} {{ student.student_last_name }}
+		</a>
+	<br>
 {% endfor %}
 
+</div>
 
 
 

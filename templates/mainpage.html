@@ -8,20 +8,22 @@ DentAssist
 
 {% block body %}
 
+<div class="col-12">
 
-<h1>DentAssist. </h1> 
-<h4>A dental care screening system.</h3>
-<span class="italics_emphasis"><h6>Designed to assist healthcare professionals <br>in identifying difficult-to-find oral health issues. </h6></span>
-<br>
+  <h1>DentAssist. </h1>
+  <h4>A dental care screening system.</h3>
+  <span class="italics_emphasis"><h6>Designed to assist healthcare professionals <br>in identifying difficult-to-find oral health issues. </h6></span>
+  <br>
 
-<form autocomplete="off" action="{{ url_for('menu') }}" method="post">
-    <input type="text" name="email" placeholder="Email"> <br>
-    <input type="password" name="pass" placeholder="Password"> <br><br>
-    <button><span>Log In</span></button>
-</form>
+  <form autocomplete="off" action="{{ url_for('menu') }}" method="post">
+      <input type="text" name="email" placeholder="Email"> <br>
+      <input type="password" name="pass" placeholder="Password"> <br><br>
+      <button><span>Log In</span></button>
+  </form>
 
 
-<br>
-<span class="italics_emphasis"><p>Not yet a user? Click <a href="{{ url_for('registration') }}">here</a> to register.</p></span>
+  <br>
+  <span class="italics_emphasis"><p>Not yet a user? Click <a href="{{ url_for('registration') }}">here</a> to register.</p></span>
 
+</div>
 {% endblock %}
