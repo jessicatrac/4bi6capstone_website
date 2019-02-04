@@ -35,20 +35,18 @@ a:hover {
 
  .navbar-default {
    background-color: #78A1BB;
+   font-size: 20px;
+   padding: 15px;
+   font-size: 25px;
+   margin:0 auto;
+   display: block;
  }
 
- .navbar-nav {
-     margin:0 auto;
-     display: block;
-     text-align: center;
-     padding: 15px
- }
-
- .navbar-nav > li {
+ .navbar-right > li {
      display: inline-block;
+     text-align: right !important;
      padding-left:10px;
      padding-right:10px;
-     font-size: 20px;
      color: #FFFFFF;
  }
 
@@ -97,14 +95,10 @@ button:hover span:after {
   right: 0;
 }
 
-
-
 i {
   padding-left:5px;
   padding-right:5px;
 }
-
-
 
 .emphasis {
   color: #78A1BB;
@@ -115,8 +109,6 @@ i {
   color: #FFFFFF;
   font-weight: bold;
  }
-
-
 
 ::placeholder { /* Most modern browsers support this now. */
    color: #C0C0C0;
