@@ -22,7 +22,7 @@
       <nav class="navbar navbar-default fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="main-nav-item" href="#"><strong>DENTASSIST</strong></a>
+          <a class="main-nav-item" href="{{ url_for('mainpage') }}"><strong>DENTASSIST</strong></a>
         </div>
         <ul class="nav navbar-right">
       <!--                      <li> | </li> -->
@@ -39,13 +39,11 @@
               <br>
               <br>
               <br>
-              <br>
-              <br>
 
             </div>
 
             <div class="row justify-content-md-center">
-              <img src="{{ url_for('static', filename='DentAssist_Mag_Logo_White_Plain.png') }}" height="150" width="150">
+              <img src="{{ url_for('static', filename='DentAssist_Mag_Logo_White_Plain.png') }}" height="130" width="130">
             </div>
 
             <div class="row justify-content-md-center">

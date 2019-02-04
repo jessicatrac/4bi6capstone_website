@@ -36,8 +36,8 @@ a:hover {
  .navbar-default {
    background-color: #78A1BB;
    font-size: 20px;
-   padding: 15px;
-   font-size: 20px;
+   padding: 13px;
+   font-size: 17px;
    margin:0 auto;
    display: block;
  }
@@ -54,7 +54,7 @@ input[type=text], input[type=password] {
     border: none;
     border-bottom: 2px solid #78A1BB;
     outline: none;
-    color: #31ABE8;
+    color: #78A1BB;
 }
 
 button {
