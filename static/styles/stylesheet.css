@@ -6,7 +6,7 @@ body {
   background-color: #FFFFFF;
 }
 
-h1, h3, h4, h6, p {
+h1, h2, h3, h4, h5, h6, p {
 	color: #78A1BB;
   text-align: center;
 }
@@ -37,7 +37,7 @@ a:hover {
    background-color: #78A1BB;
    font-size: 20px;
    padding: 15px;
-   font-size: 25px;
+   font-size: 20px;
    margin:0 auto;
    display: block;
  }
