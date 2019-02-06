@@ -3,7 +3,7 @@
 <html>
 
     <head>
-
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon-32x32.png') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- The title of the html page is placed within the title block -->
@@ -28,7 +28,7 @@
         <nav class="navbar navbar-plain fixed-top">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="main-nav-header" href="{{ url_for('mainpage') }}"><strong>DENTASSIST - Welcome, {{ name }}!</strong></a>
+            <a class="main-nav-header" href="{{ url_for('mainpage') }}"><img src="{{ url_for('static', filename='DentAssist_White.png') }}" height="30" width="30"><strong>DENTASSIST - Welcome, {{ name }}!</strong></a>
           </div>
           <ul class="nav navbar-right">
         <!--                      <li> | </li> -->
