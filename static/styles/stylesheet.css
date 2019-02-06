@@ -2,6 +2,21 @@
     text-align:center;
 }
 
+
+.left-content {
+  background-color: #78A1BB;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: 50%;
+  height: 100%;
+}
+
+.right-content {
+  position: relative;
+}
+
 body {
   background-color: #FFFFFF;
 }
@@ -15,6 +30,16 @@ a {
     color: #78A1BB;
 }
 
+.left-content a:hover{
+    color: #78A1BB;
+    background-color:#FFFFFF;
+}
+
+.left-content a{
+    color: #FFFFFF;
+}
+
+
 a:hover {
 	color: #FFFFFF;
 	text-decoration: none;
@@ -24,6 +49,8 @@ a:hover {
 .italics_emphasis {
   font-style: italic;
 }
+
+/* main nav bar*/
 
 .navbar-default a.main-nav-item {
   color: #FFFFFF;
@@ -41,6 +68,20 @@ a:hover {
    margin:0 auto;
    display: block;
  }
+
+ /* inverted nav bar*/
+
+ .navbar-plain {
+   font-size: 20px;
+   padding: 13px;
+   font-size: 17px;
+   margin:0 auto;
+   display: block;
+ }
+
+ .navbar-plain a.main-nav-header {
+   color: #FFFFFF;
+  }
 
  .navbar-right > li {
      display: inline-block;
@@ -63,6 +104,19 @@ button {
   background-color: #78A1BB;
   border: none;
   color: #FFFFFF;
+  text-align: center;
+  padding: 5px;
+  width: 170px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.inverse-btn {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  border: none;
+  color: #78A1BB;
   text-align: center;
   padding: 5px;
   width: 170px;

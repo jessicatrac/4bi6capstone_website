@@ -66,7 +66,7 @@ def menu():
 		return render_template("error.html", message="Sorry - we couldn't find you in our system. Please return to try again or register!")
 	return render_template("mainpage.html")
 
-@app.route("/view_results")
+@app.route("/view_results", methods=['POST'])
 def view_results():
 	user_id = session.get('id')
 	student_list = db.execute("SELECT * FROM students WHERE user_id = :user_id",
@@ -87,6 +87,6 @@ def assessment(student_id):
 
 
 
-@app.route("/start_assessment")
+@app.route("/start_assessment", methods=['POST'])
 def start_assessment():
     return render_template("start_assessment.html")

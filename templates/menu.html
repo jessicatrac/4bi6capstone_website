@@ -1,19 +1,105 @@
-{% extends "layout.html" %}
+<!DOCTYPE html>
 
-{% block title %}
-DentAssist - View or Start an Assessment
-{% endblock %}
+<html>
 
-{% block body %}
+    <head>
 
-<div class="col-12">
-  <h1>Hello {{ name }}!<br>
-  Please select an option.</h1>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <br>
-  <br>
+        <!-- The title of the html page is placed within the title block -->
+        <title>DentAssist - View or Start an Assessment</title>
 
-  <a href="{{ url_for('view_results') }}">View an Assessment.</a> <br>
-  <a href="{{ url_for('start_assessment') }}">Start an Assessment.</a> <br>
-</div>
-{% endblock %}
+        <!-- Here we import bootstrap's formatting - essentially makes it look nice! -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+        <!-- On top of bootstrap's formatting, we can create our own css stylesheet to format extra things -->
+        <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/stylesheet.css') }}">
+
+    </head>
+
+    <body>
+
+<div class="container">
+
+
+        <div class="row justify-content-md-center">
+
+
+        <nav class="navbar navbar-plain fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="main-nav-header" href="{{ url_for('mainpage') }}"><strong>DENTASSIST - Welcome, {{ name }}!</strong></a>
+          </div>
+          <ul class="nav navbar-right">
+        <!--                      <li> | </li> -->
+            <li><a class="main-nav-item" href="{{ url_for('about') }}"> ABOUT </a></li>
+            <li><a class="main-nav-item" href="#"> MEET THE TEAM </a></li>
+           </ul>
+        </div>
+        </nav>
+
+        </div>
+
+
+        <div class="row justify-content-md-center">
+
+
+          <div class="col-6">
+            <div class="left-content">
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+
+
+
+              <h2 style="color:white"><strong>VIEW AN ASSESSMENT.</strong></h2>
+              <br>
+
+              <p style="color:white">Browse through detection results for individual <br>students and schools from past assessments. </p>
+
+              <br>
+              <br>
+              <form autocomplete="off" action="{{ url_for('view_results') }}" method="post">
+                  <button class="inverse-btn"><span>GO</span></button>
+              </form>
+              <br>
+
+            </div>
+          </div>
+
+          <div class="col-6">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <h2><strong>START AN ASSESSMENT.</strong></h2>
+            <br>
+
+            <p>Perform a new student assessment, <br>with a visual walkthrough of the procedure.</p>
+
+            <br>
+            <br>
+
+            <form autocomplete="off" action="{{ url_for('start_assessment') }}" method="post">
+                <button><span>GO</span></button>
+            </form>
+            <br>
+
+          </div>
+        </div>
+
+        </div>
+
+
+
+    </body>
+
+  </html>
