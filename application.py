@@ -30,6 +30,10 @@ def mainpage():
 @app.route("/about")
 def about():
     return render_template("about.html")
+	
+@app.route("/team")
+def team():
+    return render_template("team.html")
 
 @app.route("/registration")
 def registration():
