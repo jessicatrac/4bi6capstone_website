@@ -20,9 +20,6 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
-
-
-
 @app.route("/")
 def mainpage():
     return render_template("mainpage.html")
@@ -30,7 +27,7 @@ def mainpage():
 @app.route("/about")
 def about():
     return render_template("about.html")
-	
+
 @app.route("/team")
 def team():
     return render_template("team.html")
@@ -89,8 +86,10 @@ def assessment(student_id):
 		return render_template("error.html", message = "Sorry - this student does not exist.")
 	return render_template("assessment_details.html", student = student_search, plaque = student_search.plaque, cavities = student_search.cavities)
 
+@app.route("/assessment_start", methods=['POST'])
+def assessment_start():
+    return render_template("assessment_start.html")
 
-
-@app.route("/start_assessment", methods=['POST'])
-def start_assessment():
-    return render_template("start_assessment.html")
+@app.route("/assessment_front", methods=['POST'])
+def assessment_front():
+    return render_template("assessment_front.html")

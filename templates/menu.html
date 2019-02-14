@@ -1,107 +1,62 @@
-<!DOCTYPE html>
+{% extends "layoutplain.html" %}
 
-<html>
+{% block title %}
+DentAssist - View or Start an Assessment
+{% endblock %}
 
-    <head>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon-32x32.png') }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% block body %}
 
-        <!-- The title of the html page is placed within the title block -->
-        <title>DentAssist - View or Start an Assessment</title>
-
-        <!-- Here we import bootstrap's formatting - essentially makes it look nice! -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-
-        <!-- On top of bootstrap's formatting, we can create our own css stylesheet to format extra things -->
-        <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/stylesheet.css') }}">
-
-    </head>
-
-    <body>
-
-<div class="container">
+<div class="col-6">
+  <div class="left-content">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
 
-        <div class="row justify-content-md-center">
+    <img src="{{ url_for('static', filename='view_assessment.png') }}" height="200" width="200">
+    <br />
 
 
-        <nav class="navbar navbar-plain fixed-top">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="main-nav-header" href="{{ url_for('mainpage') }}"><img src="{{ url_for('static', filename='DentAssist_White.png') }}" height="30" width="30"><strong>DENTASSIST - Welcome, {{ name }}!</strong></a>
-          </div>
-          <ul class="nav navbar-right">
-        <!--                      <li> | </li> -->
-            <li><a class="main-nav-item" href="{{ url_for('about') }}"> ABOUT </a></li>
-            <li><a class="main-nav-item" href="#"> MEET THE TEAM </a></li>
-           </ul>
-        </div>
-        </nav>
+    <h2 style="color:white"><strong>VIEW AN ASSESSMENT.</strong></h2>
+    <br>
 
-        </div>
+    <p style="color:white">Browse through detection results for individual <br>students and schools from past assessments. </p>
 
+    <br>
+    <br>
+    <form autocomplete="off" action="{{ url_for('view_results') }}" method="post">
+        <button class="inverse-btn"><span>GO</span></button>
+    </form>
+    <br>
 
-        <div class="row justify-content-md-center">
+  </div>
+</div>
 
+<div class="col-6">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
-          <div class="col-6">
-            <div class="left-content">
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
+  <img src="{{ url_for('static', filename='start_assessment.png') }}" height="200" width="200">
+  <br />
 
+  <h2><strong>START AN ASSESSMENT.</strong></h2>
+  <br>
 
-              <img src="{{ url_for('static', filename='view_assessment.png') }}" height="200" width="200">
-              <br />
+  <p>Perform a new student assessment, <br>with a visual walkthrough of the procedure.</p>
 
+  <br>
+  <br>
 
-              <h2 style="color:white"><strong>VIEW AN ASSESSMENT.</strong></h2>
-              <br>
+  <form autocomplete="off" action="{{ url_for('assessment_start') }}" method="post">
+      <button><span>GO</span></button>
+  </form>
+  <br>
 
-              <p style="color:white">Browse through detection results for individual <br>students and schools from past assessments. </p>
+</div>
 
-              <br>
-              <br>
-              <form autocomplete="off" action="{{ url_for('view_results') }}" method="post">
-                  <button class="inverse-btn"><span>GO</span></button>
-              </form>
-              <br>
-
-            </div>
-          </div>
-
-          <div class="col-6">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
-            <img src="{{ url_for('static', filename='start_assessment.png') }}" height="200" width="200">
-            <br />
-
-            <h2><strong>START AN ASSESSMENT.</strong></h2>
-            <br>
-
-            <p>Perform a new student assessment, <br>with a visual walkthrough of the procedure.</p>
-
-            <br>
-            <br>
-
-            <form autocomplete="off" action="{{ url_for('start_assessment') }}" method="post">
-                <button><span>GO</span></button>
-            </form>
-            <br>
-
-          </div>
-        </div>
-
-        </div>
-
-
-
-    </body>
-
-  </html>
+{% endblock %}

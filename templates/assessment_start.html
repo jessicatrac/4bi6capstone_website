@@ -1,0 +1,71 @@
+{% extends "layoutplain.html" %}
+
+{% block title %}
+DentAssist - Enter Student Information
+{% endblock %}
+
+{% block body %}
+
+<div class="col-4">
+  <div class="left-small-content">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br />
+
+
+
+    <h2 style="color:white"><strong>ENTER STUDENT INFORMATION.</strong></h2>
+    <br>
+
+
+    <p style="color:white">Browse through detection results for individual <br>students and schools from past assessments. </p>
+    <br />
+    <br />
+
+    <form autocomplete="off" action="{{ url_for('assessment_front') }}" method="post">
+  		<input type="text" name="firstname" placeholder="First Name"> <br>
+  	    <input type="text" name="lastname" placeholder="Last Name">  <br><br>
+  	    <input type="text" name="email" placeholder="Email Address">  <br>
+  	    <input type="Password" name="pass" placeholder="Password">  <br><br><br>
+  	    <input type="submit" id="student-form" class="hidden" style="display: none;"/>
+  	</form>
+
+
+
+    <br>
+    <br>
+
+  </div>
+</div>
+
+<div class="col-8">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <img src="{{ url_for('static', filename='start_assessment.png') }}" height="200" width="200">
+  <br />
+
+  <h2><strong>STEP ONE: CLEAN DEVICE.</strong></h2>
+  <br>
+
+  <p>Clean encasement of device with provided <br>dental wipes.</p>
+
+  <br>
+  <br>
+
+  <form autocomplete="off" action="{{ url_for('assessment_front') }}" method="post">
+      <label for="student-form" tabindex="0"><span>All Clean!</span></label>
+  </form>
+  <br>
+
+</div>
+
+
+{% endblock %}

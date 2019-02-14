@@ -3,11 +3,11 @@
 <html>
 
     <head>
-
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon-32x32.png') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- The title of the html page is placed within the title block -->
-        <title>{% block title %}{% endblock %}</title>
+    <!-- The title of the html page is placed within the title block -->
+    <title>{% block title %}{% endblock %}</title>
 
         <!-- Here we import bootstrap's formatting - essentially makes it look nice! -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
@@ -19,13 +19,16 @@
 
     <body>
 
-      <div class="left-content">
+<div class="container">
 
 
-        <nav class="navbar navbar-default fixed-top">
+        <div class="row justify-content-md-center">
+
+
+        <nav class="navbar navbar-plain fixed-top">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="main-nav-item" href="{{ url_for('mainpage') }}"><strong>DENTASSIST</strong></a>
+            <a class="main-nav-header" href="{{ url_for('mainpage') }}"><img src="{{ url_for('static', filename='DentAssist_White.png') }}" height="30" width="30"><strong>DENTASSIST - Welcome, {{ name }}!</strong></a>
           </div>
           <ul class="nav navbar-right">
         <!--                      <li> | </li> -->
@@ -35,52 +38,23 @@
         </div>
         </nav>
 
-
-      </div>
-
-      <div class="right-content">
-
-      </div>
+        </div>
 
 
+        <div class="row justify-content-md-center">
 
 
+          <!-- In the html page that implements this layout, its main information is placed within this body block -->
+          {% block body %}
+          {% endblock %}
 
-        <!-- Centering the body of the page -->
-        <div class="container">
-            <div class="row justify-content-md-center">
-              <br>
-              <br>
-              <br>
-              <br>
-
-            </div>
-
-            <div class="row justify-content-md-center">
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-
-            </div>
-
-            <div class="row justify-content-md-center">
-                    <!-- In the html page that implements this layout, its main information is placed within this body block -->
-                    {% block body %}
-                    {% endblock %}
-            </div>
-
-            <div class="row justify-content-md-center">
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-            </div>
 
         </div>
 
+        </div>
+
+
+
     </body>
 
-</html>
+  </html>

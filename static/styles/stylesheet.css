@@ -13,6 +13,16 @@
   height: 100%;
 }
 
+.left-small-content {
+  background-color: #78A1BB;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: 33%;
+  height: 100%;
+}
+
 .right-content {
   position: relative;
 }
@@ -98,7 +108,7 @@ input[type=text], input[type=password] {
     color: #78A1BB;
 }
 
-button {
+button, label {
   display: inline-block;
   border-radius: 4px;
   background-color: #78A1BB;
@@ -124,14 +134,14 @@ button {
   cursor: pointer;
 }
 
-button span {
+button span, label span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-button span:after {
+button span:after, label span:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -140,11 +150,16 @@ button span:after {
   transition: 0.5s;
 }
 
-button:hover span {
+button:hover span, label:hover span {
   padding-right: 25px;
 }
 
 button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+label:hover span:after {
   opacity: 1;
   right: 0;
 }
