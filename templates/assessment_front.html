@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layoutplain.html" %}
 
 {% block title %}
 DentAssist - Enter Student Information
@@ -6,17 +6,63 @@ DentAssist - Enter Student Information
 
 {% block body %}
 
+<div class="col-4">
+  <div class="left-small-content">
+    <br>
+    <br>
+    <br>
 
-<div class="col-12">
+    <br />
+    <br>
+    <br>
+    <br>
+
+    <h2 style="color:white"><strong>VIDEO PREVIEW.</strong></h2>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br />
+    <br />
+    <br>
+
+    <p style="color:white">If connected, DentAssist preview <br />will appear here with button press. </p>
+    <br />
+    <br />
+
+
+    <br>
+    <br>
+
+  </div>
+</div>
+
+<div class="col-8">
+  <br>
+  <br>
+
+  <img src="{{ url_for('static', filename='start_assessment.png') }}" height="200" width="200">
   <br />
-  <h1>STEP TWO</h1>
-    <h5>Capture Front Teeth</h5>
 
+  <h2><strong>STEP TWO: CAPTURE FRONT TEETH.</strong></h2>
+  <br>
+
+  <h3>Instruct student to open mouth, with top and <br />bottom teeth aligned and visible.</h3>
+  <br />
+  <p>
+    1. Position device in the front of teeth.<br />
+    2. Align camera to center of top and bottom teeth, and left and right side.<br />
+    3. Click button.<br />
+
+    </p>
+
+  <br>
   <br>
   <br>
 
 </div>
-
 
 
 {% endblock %}
