@@ -1,5 +1,49 @@
 {% extends "layout_nologo.html" %}
 
+{% block style %}
+
+	.cont1 {
+		position: relative;
+		width: 100%;
+	}
+
+	.image1 {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	
+	.middle1 {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 100%;
+		width: 100%;
+		opacity: 0;
+		transition: .5s ease;
+		background-color: #78A1BB;
+	}
+	
+	.cont1:hover .middle1{
+		opacity: 1;
+	}
+	
+	.text {
+		color: white;
+		font-size: 16px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		text-align: center;
+	}
+
+{% endblock %}
+
 {% block title %}
 DentAssist - About
 {% endblock %}
@@ -12,40 +56,64 @@ DentAssist - About
   
   <div class="row">
     <div class="col">
-      1 of 5
+     
     </div>
     <div class="col-4">
-      <h1>Meet The Team</h1>
+		<br>
+		<br>
+		<br>
+		<br>
+      <h1>Our Team</h1>
+	  <h5>With a perfect blend of creativity and teachnical skills, we're a team of dedicated undergraduate engineering students. Stick around and get to know us! </h5>
     </div>
     <div class="col">
-      3 of 5
+     
     </div>
 	<div class="col-4">
-      <img src="{{ url_for('static', filename='jessica_trac_team.png') }}" class="img-fluid" alt="Responsive image">
+		<div class="cont1">
+			<img src="{{ url_for('static', filename='jessica_trac_team.png') }}" class="image1" alt="Responsive image">
+			<div class="middle1">
+			<div class="text">Jessica Trac</div>
+			</div>
+		</div>
     </div>
 	<div class="col">
-      5 of 5
+     
     </div>
   </div>
   
   <div class="row">
+	<br>
+	<br>
+	<br>
+	<br>
   </div>
   
   <div class="row">
     <div class="col">
-      1 of 5
+      
     </div>
     <div class="col-4">
-      <img src="{{ url_for('static', filename='sehaz_dayal_team.png') }}" class="img-fluid" alt="Responsive image">
+		<div class="cont1">
+			<img src="{{ url_for('static', filename='sehaz_dayal_team.png') }}" class="image1" alt="Responsive image">
+			<div class="middle1">
+			<div class="text">Sehaz Dayal</div>
+			</div>
+		</div>
     </div>
     <div class="col">
-      3 of 5
+      
     </div>
 	<div class="col-4">
-      <img src="{{ url_for('static', filename='ama_simons_team.png') }}" class="img-fluid" alt="Responsive image">
+		<div class="cont1">
+			<img src="{{ url_for('static', filename='ama_simons_team.png') }}" class="image1" alt="Responsive image">
+			<div class="middle1">
+			<div class="text">Ama Simons</div>
+			</div>
+		</div>
     </div>
 	<div class="col">
-      5 of 5
+      
     </div>
   </div>
   
