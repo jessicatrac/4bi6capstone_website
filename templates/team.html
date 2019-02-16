@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout_nologo.html" %}
 
 {% block title %}
 DentAssist - About
@@ -6,11 +6,49 @@ DentAssist - About
 
 {% block body %}
 
-<div class="col-12">
-  <h1>About DentAssist</h1>
-
-  <br>
-  <br>
-
+<div class="container">
+  <div class="row">
+  </div>
+  
+  <div class="row">
+    <div class="col">
+      1 of 5
+    </div>
+    <div class="col-4">
+      <h1>Meet The Team</h1>
+    </div>
+    <div class="col">
+      3 of 5
+    </div>
+	<div class="col-4">
+      <img src="{{ url_for('static', filename='jessica_trac_team.png') }}" class="img-fluid" alt="Responsive image">
+    </div>
+	<div class="col">
+      5 of 5
+    </div>
+  </div>
+  
+  <div class="row">
+  </div>
+  
+  <div class="row">
+    <div class="col">
+      1 of 5
+    </div>
+    <div class="col-4">
+      <img src="{{ url_for('static', filename='sehaz_dayal_team.png') }}" class="img-fluid" alt="Responsive image">
+    </div>
+    <div class="col">
+      3 of 5
+    </div>
+	<div class="col-4">
+      <img src="{{ url_for('static', filename='ama_simons_team.png') }}" class="img-fluid" alt="Responsive image">
+    </div>
+	<div class="col">
+      5 of 5
+    </div>
+  </div>
+  
 </div>
+
 {% endblock %}
