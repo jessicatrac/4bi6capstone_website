@@ -26,11 +26,11 @@ DentAssist - Enter Student Information
     <br />
     <br />
 
-    <form autocomplete="off" action="{{ url_for('assessment_front') }}" method="post">
+    <form autocomplete="off" class="blue_form" action="{{ url_for('assessment_front') }}" method="post">
   		<input type="text" name="firstname" placeholder="First Name"> <br>
   	    <input type="text" name="lastname" placeholder="Last Name">  <br><br>
-  	    <input type="text" name="email" placeholder="Email Address">  <br>
-  	    <input type="Password" name="pass" placeholder="Password">  <br><br><br>
+  	    <input type="text" name="school" placeholder="Elementary School">  <br>
+  	    <input type="text" name="email" placeholder="Guardian Email">  <br><br><br>
   	    <input type="submit" id="student-form" class="hidden" style="display: none;"/>
   	</form>
 

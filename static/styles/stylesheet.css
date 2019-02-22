@@ -101,11 +101,20 @@ a:hover {
      color: #FFFFFF;
  }
 
-input[type=text], input[type=password] {
+.white_form input[type=text], input[type=password]{
     border: none;
     border-bottom: 2px solid #78A1BB;
     outline: none;
     color: #78A1BB;
+    background-color: white;
+}
+
+.blue_form input[type=text] {
+  border: none;
+  border-bottom: 2px solid white;
+  outline: none;
+  color: white;
+  background-color: #78A1BB;
 }
 
 button, label {
@@ -181,4 +190,8 @@ i {
 
 ::placeholder { /* Most modern browsers support this now. */
    color: #C0C0C0;
+}
+
+.blue_form ::placeholder { /* Most modern browsers support this now. */
+   color: #bbd0dd
 }
