@@ -1,7 +1,7 @@
 {% extends "layoutplain.html" %}
 
 {% block title %}
-DentAssist - Enter Student Information
+DentAssist - Capture Front Teeth
 {% endblock %}
 
 {% block body %}
@@ -24,16 +24,16 @@ DentAssist - Enter Student Information
     <br>
     <br>
     <br>
-    <br />
-    <br />
+    <img src="{{ url_for('static', filename='loadingvideo.png') }}" height="75" width="75">
     <br>
-    <br />
-    <br />
+    <br>
+    <br>
+    <br>
     <br>
 
     <p style="color:white">If connected, DentAssist preview <br />will appear here with button press. </p>
-    <br />
-    <br />
+    <br>
+    <br>
 
 
     <br>
@@ -45,9 +45,11 @@ DentAssist - Enter Student Information
 <div class="col-8">
   <br>
   <br>
-
-  <img src="{{ url_for('static', filename='start_assessment.png') }}" height="200" width="200">
   <br />
+
+  <img src="{{ url_for('static', filename='Step2_FrontSq.png') }}" height="225" width="225">
+  <br>
+  <br>
 
   <h2><strong>STEP TWO: CAPTURE FRONT TEETH.</strong></h2>
   <br>
@@ -57,8 +59,14 @@ DentAssist - Enter Student Information
     2. Align camera to center of <span class="emphasis">top</span> and <br />
           <span class="emphasis">bottom teeth</span>, and <span class="emphasis">left</span> and <span class="emphasis">right</span> side.<br />
     3. <span class="emphasis">Click</span> button.<br />
+  </p>
+  <br>
 
-    </p>
+  <form autocomplete="off" class="white_form" action="{{ url_for('assessment_back') }}" method="post">
+      <button><span>Captured!</span></button>
+  </form>
+
+
 
   <br>
   <br>

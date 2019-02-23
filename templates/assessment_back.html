@@ -1,0 +1,72 @@
+{% extends "layoutplain.html" %}
+
+{% block title %}
+DentAssist - Capture Back Teeth
+{% endblock %}
+
+{% block body %}
+
+<div class="col-4">
+  <div class="left-small-content">
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h2 style="color:white"><strong>VIDEO PREVIEW.</strong></h2>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <img src="{{ url_for('static', filename='loadingvideo.png') }}" height="75" width="75">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <p style="color:white">If connected, DentAssist preview <br />will appear here with button press. </p>
+    <br>
+    <br>
+
+
+    <br>
+    <br>
+
+  </div>
+</div>
+
+<div class="col-8">
+  <br>
+  <br>
+  <br>
+
+  <img src="{{ url_for('static', filename='Step3_BackSq.png') }}" height="225" width="225">
+  <br>
+  <br>
+
+  <h2><strong>STEP 3: CAPTURE BACK TEETH.</strong></h2>
+  <br>
+
+  <p>
+    1. <span class="emphasis">Position</span> device against bottom of top teeth, <br />with <span class="emphasis">camera facing bottom teeth.</span><br />
+    2. Tilt camera <span class="emphasis">30-45 degrees</span> towards you.<br />
+    3. Ensure <span class="emphasis">clear view</span> of back of bottom teeth.<br />
+    4. <span class="emphasis">Click</span> button.<br />
+
+    </p>
+
+  <br>
+  <br>
+  <br>
+
+</div>
+
+
+{% endblock %}

@@ -93,3 +93,7 @@ def assessment_start():
 @app.route("/assessment_front", methods=['POST'])
 def assessment_front():
     return render_template("assessment_front.html")
+
+@app.route("/assessment_back", methods=['POST'])
+def assessment_back():
+    return render_template("assessment_back.html")
