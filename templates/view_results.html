@@ -4,18 +4,148 @@
 DentAssist - View an Assessment
 {% endblock %}
 
+{% block style %}
+table {
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th {
+  cursor: pointer;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px;
+}
+
+#th1 {
+  text-align: center;
+  padding: 10px;
+  cursor: auto;
+}
+
+#td1 {
+  text-align: center;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+#myInput {
+	box-sizing: border-box;
+  background-image: url('/static/searchicon1.jpg');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 50%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+{% endblock %}
+
 {% block body %}
 
 <div class="col-12">
-	<h1>Select a student below.</h1>
+	<h2>Select a student below.</h2>
+	<span class="italics_emphasis"><h3>or</h3></span>
+	
+	<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
 	<br>
-
+	<table id="myTable">
+		<tr>
+		<!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->  
+			<th onclick="sortTable(0)">First Name</th>
+			<th onclick="sortTable(1)">Last Name</th>
+			<th width = 30% id="th1" >View Assessment</th>
+		</tr>
+		
 	{% for student in student_list %}
-		<a href="{{ url_for('assessment', student_id=student.id) }}">
-			{{ student.student_first_name }} {{ student.student_last_name }}
-		</a>
+		<tr>
+			<td>{{ student.student_first_name }}</td> <td>{{ student.student_last_name }}</td>
+			<td id="td1" ><a href="{{ url_for('assessment', student_id=student.id) }}"><img src="{{ url_for('static', filename='studenticon3.png') }}" height="30" width="30"></a></td>
+		</tr>
+	{% endfor %}
+	</table>
+	
+	<script>
+	function sortTable(n) {
+	  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+	  table = document.getElementById("myTable");
+	  switching = true;
+	  //Set the sorting direction to ascending:
+	  dir = "asc"; 
+	  /*Make a loop that will continue until
+	  no switching has been done:*/
+	  while (switching) {
+		//start by saying: no switching is done:
+		switching = false;
+		rows = table.rows;
+		/*Loop through all table rows (except the
+		first, which contains table headers):*/
+		for (i = 1; i < (rows.length - 1); i++) {
+		  //start by saying there should be no switching:
+		  shouldSwitch = false;
+		  /*Get the two elements you want to compare,
+		  one from current row and one from the next:*/
+		  x = rows[i].getElementsByTagName("TD")[n];
+		  y = rows[i + 1].getElementsByTagName("TD")[n];
+		  /*check if the two rows should switch place,
+		  based on the direction, asc or desc:*/
+		  if (dir == "asc") {
+			if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+			  //if so, mark as a switch and break the loop:
+			  shouldSwitch= true;
+			  break;
+			}
+		  } else if (dir == "desc") {
+			if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+			  //if so, mark as a switch and break the loop:
+			  shouldSwitch = true;
+			  break;
+			}
+		  }
+		}
+		if (shouldSwitch) {
+		  /*If a switch has been marked, make the switch
+		  and mark that a switch has been done:*/
+		  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+		  switching = true;
+		  //Each time a switch is done, increase this count by 1:
+		  switchcount ++;      
+		} else {
+		  /*If no switching has been done AND the direction is "asc",
+		  set the direction to "desc" and run the while loop again.*/
+		  if (switchcount == 0 && dir == "asc") {
+			dir = "desc";
+			switching = true;
+		  }
+		}
+	  }
+	}
+	function myFunction() {
+	  var input, filter, table, tr, td, i, txtValue;
+	  input = document.getElementById("myInput");
+	  filter = input.value.toUpperCase();
+	  table = document.getElementById("myTable");
+	  tr = table.getElementsByTagName("tr");
+	  for (i = 0; i < tr.length; i++) {
+		td = tr[i].getElementsByTagName("td")[0];
+		if (td) {
+		  txtValue = td.textContent || td.innerText;
+		  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+			tr[i].style.display = "";
+		  } else {
+			tr[i].style.display = "none";
+		  }
+		}       
+	  }
+	}
+	</script>
 	<br>
-{% endfor %}
 
 </div>
 

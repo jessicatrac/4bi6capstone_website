@@ -14,7 +14,8 @@
 
         <!-- On top of bootstrap's formatting, we can create our own css stylesheet to format extra things -->
         <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/stylesheet.css') }}">
-
+		
+		<style>{% block style %}{% endblock %}</style>
     </head>
 
     <body>
