@@ -195,3 +195,27 @@ i {
 .blue_form ::placeholder { /* Most modern browsers support this now. */
    color: #bbd0dd
 }
+
+.aboutbackground {
+	background-color:white;
+}
+
+.aboutbackground2{
+	background-color:#78A1BB;
+	}
+
+.img {
+max-width: 100%;
+height:auto;
+width:auto;
+}
+
+.imgDevice{
+max-width:100%;
+max-height:100%;
+height:auto;
+width:auto;
+padding-left: 250px;
+padding-right: 250px;
+}
+

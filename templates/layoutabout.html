@@ -13,10 +13,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 
         <!-- On top of bootstrap's formatting, we can create our own css stylesheet to format extra things -->
-        <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/stylesheetabout.css') }}">
+        <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/stylesheet.css') }}">
 
     </head>
-
     <body>
 
       <nav class="navbar navbar-default fixed-top">
@@ -33,35 +32,41 @@
       </nav>
 
         <!-- Centering the body of the page -->
-        <div class="container">
-            <div class="row justify-content-md-center">
-              <br>
-              <br>
-              <br>
-              <br>
-
-            </div>
-
-            <div class="row justify-content-md-center">
-              <img src="{{ url_for('static', filename='DentAssist_Mag_Logo_White_Plain.png') }}" height="130" width="130">
-            </div>
-
-            <div class="row justify-content-md-center">
-                    <!-- In the html page that implements this layout, its main information is placed within this body block -->
-                    {% block body %}
-                    {% endblock %}
-            </div>
-
-            <div class="row justify-content-md-center">
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
-            </div>
-
-        </div>
-
+			<div class = "aboutbackground">
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<h1 style="color:#78A1BB">Creating Healthy Smiles</h1></strong>
+				<img src="static/styles/kids.jpg" class="img">
+			</div>
+	
+			<div class= "aboutbackground2" style="vertical-align:middle">
+				<br>
+				<br>
+				<br>
+				<h2 style="color:white">How It Works</h2>
+				<br>
+				<br>
+				<br>
+				<br>
+				<img src="static/styles/Device.jpg" class="imgDevice">
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+			</div>
     </body>
-
 </html>
