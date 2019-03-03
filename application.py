@@ -92,7 +92,23 @@ def assessment_start():
 
 @app.route("/assessment_front", methods=['POST'])
 def assessment_front():
+    firstname_new = request.form.get("firstname") # Storing the new user into our database
+    lastname_new = request.form.get("lastname")
+    school_new = request.form.get("school")
+    email_new = request.form.get("email")
+    session_id = session['id']
+    try:
+    	db.execute("INSERT INTO students (student_first_name, student_last_name, school, guardian_email, user_id) VALUES (:first, :last, :school, :email, :nurse_id)",
+    		{"first": firstname_new, "last": lastname_new, "school": school_new, "email": email_new, "nurse_id": session_id})
+    	db.commit()
+    	print("Added %s to the student database" % firstname_new)
+    except ValueError:
+    	return render_template("error.html", message="Sorry - cannot add student.")
     return render_template("assessment_front.html")
+
+
+
+
 
 @app.route("/assessment_back", methods=['POST'])
 def assessment_back():
