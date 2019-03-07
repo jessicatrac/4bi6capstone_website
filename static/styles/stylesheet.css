@@ -208,6 +208,7 @@ i {
 max-width: 100%;
 height:auto;
 width:auto;
+z-index: -1;
 }
 
 .imgDevice{
@@ -216,6 +217,21 @@ max-height:100%;
 height:auto;
 width:auto;
 padding-left: 250px;
-padding-right: 250px;
+padding-right: 250px; 
 }
 
+img
+
+
+.centered {
+  position: absolute;
+  top: 45%;
+  left: 75%;
+  transform: translate(-50%,-50%);
+}
+
+.container2{
+	position: relative;
+	text-align: center;
+	color: white;
+}
