@@ -67,6 +67,12 @@ def menu():
 		return render_template("error.html", message="Sorry - we couldn't find you in our system. Please return to try again or register!")
 	return render_template("mainpage.html")
 
+@app.route("/menu_return")
+def menu_return():
+    print("%s is returning to menu" % session['name'])
+    return render_template("menu.html", name=session.get('name'))
+
+
 @app.route("/view_results", methods=['POST'])
 def view_results():
 	user_id = session.get('id')
