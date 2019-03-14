@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layoutplain.html" %}
 
 {% block title %}
 DentAssist - View an Assessment
@@ -16,8 +16,9 @@ th {
 }
 
 th, td {
-  text-align: left;
+  text-align: center;
   padding: 10px;
+  color: #78A1BB;
 }
 
 #th1 {
@@ -36,33 +37,68 @@ tr:nth-child(even) {
 }
 #myInput {
 	box-sizing: border-box;
-  background-image: url('/static/searchicon1.jpg');
-  background-position: 10px 10px;
+  background-image: url('/static/searchicon.png');
+  background-position: 10px 15px;
+  background-size: 20px 20px;
   background-repeat: no-repeat;
   width: 50%;
   font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
+  padding: 12px 20px 5px 40px;
+  border: none;
+  border-bottom: 2px solid white;
+  outline: none;
+  color: white;
+  background-color: #78A1BB;
 }
+
+::placeholder { /* Most modern browsers support this now. */
+   color: #bbd0dd
+}
+
 {% endblock %}
 
 {% block body %}
 
-<div class="col-12">
-	<h2>Select a student below.</h2>
-	<span class="italics_emphasis"><h3>or</h3></span>
-	
-	<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
-	<br>
+<div class="col-4">
+  <div class="left-small-content">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+	  <h2 style="color:white">Select a student:</h2>
+    <br>
+  	<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for first name..." title="Type in a name">
+  	<br>
+    <br>
+  </div>
+
+</div>
+
+<div class="col-1">
+  </div>
+<div class="col-6">
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 	<table id="myTable">
 		<tr>
-		<!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->  
+		<!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
 			<th onclick="sortTable(0)">First Name</th>
 			<th onclick="sortTable(1)">Last Name</th>
 			<th width = 30% id="th1" >View Assessment</th>
 		</tr>
-		
+
 	{% for student in student_list %}
 		<tr>
 			<td>{{ student.student_first_name }}</td> <td>{{ student.student_last_name }}</td>
@@ -70,14 +106,14 @@ tr:nth-child(even) {
 		</tr>
 	{% endfor %}
 	</table>
-	
+
 	<script>
 	function sortTable(n) {
 	  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
 	  table = document.getElementById("myTable");
 	  switching = true;
 	  //Set the sorting direction to ascending:
-	  dir = "asc"; 
+	  dir = "asc";
 	  /*Make a loop that will continue until
 	  no switching has been done:*/
 	  while (switching) {
@@ -115,7 +151,7 @@ tr:nth-child(even) {
 		  rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
 		  switching = true;
 		  //Each time a switch is done, increase this count by 1:
-		  switchcount ++;      
+		  switchcount ++;
 		} else {
 		  /*If no switching has been done AND the direction is "asc",
 		  set the direction to "desc" and run the while loop again.*/
@@ -141,15 +177,14 @@ tr:nth-child(even) {
 		  } else {
 			tr[i].style.display = "none";
 		  }
-		}       
+		}
 	  }
 	}
 	</script>
 	<br>
-
 </div>
-
-
+<div class="col-1">
+  </div>
 
 
 {% endblock %}
