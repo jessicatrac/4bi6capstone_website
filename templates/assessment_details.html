@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout_nologo.html" %}
 
 {% block title %}
 DentAssist - View an Assessment
@@ -6,16 +6,28 @@ DentAssist - View an Assessment
 
 {% block body %}
 
+  <div class="col-3">
+    </div>
+  <div class="col-3">
+    <br />
+    <br />
+    <br />
+    <img src="{{ url_for('static', filename='view_assessment_blue.png') }}" height="300" width="300">
+  </div>
 
-<h1>{{student.student_first_name}} {{student.student_last_name}}</h1> 
-<br>
-
-<h4>Plaque Detected: {{plaque}}</h4>
-<h4>Cavity Count: {{cavities}}</h4>
-
-<br>
-<br>
-
-
+  <div class="col-3">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <h1><span class="emphasis">{{student.student_first_name}}</span> {{student.student_last_name}}</h1>
+    <br />
+    <h5><span class="emphasis">Plaque Detected:</span> {{plaque}}<br />
+    <span class="emphasis">Cavity Count:</span> {{cavities}}</h5>
+    <br>
+  </div>
+  <div class="col-3">
+    </div>
 
 {% endblock %}
