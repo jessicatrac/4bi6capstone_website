@@ -106,10 +106,10 @@ def assessment_front():
     	return render_template("error.html", message="Sorry - cannot add student.")
     return render_template("assessment_front.html")
 
-
-
-
-
 @app.route("/assessment_back", methods=['POST'])
 def assessment_back():
     return render_template("assessment_back.html")
+
+@app.route("/assessment_complete", methods=['POST'])
+def assessment_complete():
+    return render_template("assessment_complete.html")
