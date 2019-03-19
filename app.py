@@ -4,6 +4,7 @@ from flask import Flask, session, render_template, request
 from flask_session import Session
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
+import datetime
 
 app = Flask(__name__)
 
@@ -76,7 +77,7 @@ def menu_return():
 @app.route("/view_results", methods=['POST'])
 def view_results():
 	user_id = session.get('id')
-	student_list = db.execute("SELECT * FROM students WHERE user_id = :user_id",
+	student_list = db.execute("SELECT MIN(id) as id, student_first_name, student_last_name FROM students WHERE user_id = :user_id GROUP BY student_first_name, student_last_name",
 		{"user_id":user_id}).fetchall()
 	for student in student_list:
 		print("Search result: %s" % student.student_first_name)
@@ -87,10 +88,15 @@ def view_results():
 
 @app.route("/assessment/<string:student_id>")
 def assessment(student_id):
-	student_search = db.execute("SELECT * FROM students WHERE id =:student_id", {"student_id": student_id}).fetchone()
-	if student_search is None:
-		return render_template("error.html", message = "Sorry - this student does not exist.")
-	return render_template("assessment_details.html", student = student_search, plaque = student_search.plaque, cavities = student_search.cavities)
+    student_prelim = db.execute("SELECT * FROM students WHERE id =:student_id", {"student_id": student_id}).fetchone()
+    if student_prelim is None:
+        return render_template("error.html", message = "Sorry - this student does not exist.")
+    first_name = student_prelim.student_first_name
+    last_name = student_prelim.student_last_name
+    student_search = db.execute("SELECT * FROM students WHERE student_first_name =:first_name AND student_last_name =:last_name", {"first_name": first_name, "last_name": last_name}).fetchall()
+    if student_search is None:
+        return render_template("error.html", message = "Sorry - this student does not exist.")
+    return render_template("assessment_details.html", student = student_prelim,student_per_year = student_search)
 
 @app.route("/assessment_start", methods=['POST'])
 def assessment_start():
@@ -103,9 +109,11 @@ def assessment_front():
     school_new = request.form.get("school")
     email_new = request.form.get("email")
     session_id = session['id']
+    now = datetime.datetime.now() # get current year to store as assessment year
+    year = now.year
     try:
-    	db.execute("INSERT INTO students (student_first_name, student_last_name, school, guardian_email, user_id) VALUES (:first, :last, :school, :email, :nurse_id)",
-    		{"first": firstname_new, "last": lastname_new, "school": school_new, "email": email_new, "nurse_id": session_id})
+    	db.execute("INSERT INTO students (student_first_name, student_last_name, school, guardian_email, user_id, year_assessment) VALUES (:first, :last, :school, :email, :nurse_id, :year)",
+    		{"first": firstname_new, "last": lastname_new, "school": school_new, "email": email_new, "nurse_id": session_id, "year": year})
     	db.commit()
     	print("Added %s to the student database" % firstname_new)
     except ValueError:

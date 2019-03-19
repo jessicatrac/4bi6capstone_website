@@ -5,7 +5,6 @@ to write SQL commands to directly write to our database on Heroku.
 Note: Cannot create users and students tables again - they're already created! You can use the code
 below as a guideline to create more tables in our database. */
 
-
 CREATE TABLE users ( /* Keeps track of healthcare professionals that register with DentAssist. */
 	id SERIAL PRIMARY KEY,
 	first_name VARCHAR NOT NULL,
@@ -15,7 +14,7 @@ CREATE TABLE users ( /* Keeps track of healthcare professionals that register wi
 );
 
 
-INSERT INTO users (first_name, last_name, email, password) VALUES ('Jessica', 'Trac', 'tracj2@mcmaster.ca','testing123');
+INSERT INTO users (first_name, last_name, email, password) VALUES ('Jessica', 'Trac', 'tracj2@mcmaster.ca','123');
 
 
 CREATE TABLE students ( /* Keeps track of detection results for students. */
@@ -25,11 +24,14 @@ CREATE TABLE students ( /* Keeps track of detection results for students. */
 	school VARCHAR NOT NULL,
 	guardian_email VARCHAR NOT NULL,
 	user_id INTEGER REFERENCES users,
-	plaque BOOLEAN,
-	cavities INTEGER
+	year_assessment INTEGER,
+	plaque BOOLEAN
 );
 
 INSERT INTO students (student_first_name, student_last_name, school, guardian_email, user_id) VALUES ('Christine', 'Trac', 'Castlemore', 'jessicamtrac@gmail.com', 1);
 INSERT INTO students (student_first_name, student_last_name, school, guardian_email, user_id, plaque, cavities) VALUES ('Sarina', 'Trac', 'Castlemore', 'jessicamtrac@gmail.com', 1, 'false', 2);
 INSERT INTO students (student_first_name, student_last_name, school, guardian_email, user_id, plaque, cavities) VALUES ('Jessica', 'Trac', 'Castlemore', 'jessicamtrac@gmail.com', 1, 'true', 1);
 INSERT INTO students (student_first_name, student_last_name, school, guardian_email, user_id, plaque) VALUES ('Nikki', 'Peng', 'Castlemore', 'jessicamtrac@gmail.com', 1, 'true');
+
+-- adding date to database (most up to date insertion)
+INSERT INTO students (student_first_name, student_last_name, school, guardian_email, user_id, year_assessment, plaque) VALUES ('Nikki', 'Peng', 'Castlemore', 'tracj2@mcmaster.com', 1, 2018, 'true');
