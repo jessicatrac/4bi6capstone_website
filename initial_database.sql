@@ -35,4 +35,4 @@ INSERT INTO students (student_first_name, student_last_name, school, guardian_em
 INSERT INTO students (student_first_name, student_last_name, school, guardian_email, user_id, plaque) VALUES ('Nikki', 'Peng', 'Castlemore', 'jessicamtrac@gmail.com', 1, 'true');
 
 -- adding date to database (most up to date insertion)
-INSERT INTO students (student_first_name, student_last_name, school, guardian_email, user_id, year_assessment, plaque) VALUES ('Richard', 'Trac', 'Castlemore', 'tracj2@mcmaster.com', 1, 2018, 0.92,1.09);
+INSERT INTO students (student_first_name, student_last_name, school, guardian_email, user_id, year_assessment, plaque_front, plaque_back) VALUES ('Richard', 'Trac', 'Castlemore', 'tracj2@mcmaster.com', 1, 2018, 0.92,1.09);
