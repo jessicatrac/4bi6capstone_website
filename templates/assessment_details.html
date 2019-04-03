@@ -27,13 +27,15 @@ DentAssist - View an Assessment
       <tr>
       <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->
         <th onclick="sortTable(0)">Year</th>
-        <th>Plaque Detected</th>
+        <th>Front Plaque %</th>
+        <th>Back Plaque %</th>
       </tr>
 
     {% for assessment in student_per_year %}
       <tr>
         <td>{{ assessment.year_assessment }}</td>
-        <td>{{ assessment.plaque }}</td>
+        <td>{{ assessment.plaque_front }}</td>
+        <td>{{ assessment.plaque_back }}</td>
       </tr>
     {% endfor %}
     </table>
