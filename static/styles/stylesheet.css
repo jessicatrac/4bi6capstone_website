@@ -205,10 +205,9 @@ i {
 	}
 
 .img {
-max-width: 100%;
-height:auto;
-width:auto;
-z-index: -1;
+position:relative;
+height:100%;
+width:100%;
 }
 
 .imgDevice{
@@ -220,8 +219,6 @@ padding-left: 250px;
 padding-right: 250px;
 }
 
-img
-
 
 .centered {
   position: absolute;
@@ -232,8 +229,19 @@ img
 
 .container2{
 	position: relative;
-	text-align: center;
-	color: white;
+	width: 100%
+}
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+h2 span {   
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 10px; 
 }
 
 th {
